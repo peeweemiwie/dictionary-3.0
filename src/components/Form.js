@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Dictionary from './Dictionary';
-import Images from './Images';
+// import Dictionary from './Dictionary';
+// import Images from './Images';
 import './Form.scss';
 
 const Form = ({ defaultValue }) => {
@@ -20,7 +20,6 @@ const Form = ({ defaultValue }) => {
 
 	useEffect(() => {
 		if (keyword) setHasNewKeyword(true);
-		// console.log(keyword, hasNewKeyword, ' from Form');
 	}, [keyword]);
 
 	return (
@@ -43,12 +42,12 @@ const Form = ({ defaultValue }) => {
 					onChange={(event) => setValue(event.target.value)}
 				/>
 			</form>
-			{hasNewKeyword && (
-				<>
+			{/* {hasNewKeyword && (
+				<main>
 					<Dictionary keyword={keyword} handleClickedWord={handleClickedWord} />
 					<Images keyword={keyword} />
-				</>
-			)}
+				</main>
+			)} */}
 		</div>
 	);
 };
