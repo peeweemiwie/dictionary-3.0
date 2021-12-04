@@ -7,7 +7,7 @@ import './Dictionary.scss';
 const Dictionary = ({ keyword, handleClickedWord }) => {
 	const dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
 	const { data, isPending, error } = useAxios(dictionaryApiUrl);
-	// console.log(keyword, ' from dictionary');
+
 	return (
 		<div className='Dictionary'>
 			{isPending && <p>Loading...</p>}
