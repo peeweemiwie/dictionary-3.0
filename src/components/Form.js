@@ -1,24 +1,27 @@
-import { useState } from 'react';
-import axios from 'axios';
-import WordOrigin from './WordOrigin';
-import Phonetics from './Phonetics';
-import Meanings from './Meanings';
+import { useState, useEffect } from 'react';
+import Dictionary from './Dictionary';
+import Images from './Images';
+import './Form.scss';
 
-const Form = () => {
-	const [value, setValue] = useState('');
-	const [data, setData] = useState(null);
-
-	const handleDictionaryResponse = (response) => {
-		// console.log('response', response);
-		setData(response.data[0]);
-		setValue('');
-	};
+const Form = ({ defaultValue }) => {
+	const [value, setValue] = useState(defaultValue);
+	const [keyword, setKeyword] = useState(defaultValue);
+	const [hasNewKeyword, setHasNewKeyword] = useState(false);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${value}`;
-		axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
+		setKeyword(value);
 	};
+
+	const handleClickedWord = (word) => {
+		setKeyword(word);
+		setValue(word);
+	};
+
+	useEffect(() => {
+		if (keyword) setHasNewKeyword(true);
+		// console.log(keyword, hasNewKeyword, ' from Form');
+	}, [keyword]);
 
 	return (
 		<div>
@@ -27,20 +30,24 @@ const Form = () => {
 				aria-label='Enter a word to search'
 				onSubmit={handleSubmit}
 			>
-				<label htmlFor='dictionary'>Enter a word to search</label>
+				<label htmlFor='dictionary' className='label'>
+					Enter a word to search
+				</label>
 				<input
+					autofocus='on'
+					className='input'
 					type='search'
 					name='dictionary'
 					id='dictionary'
+					value={value}
 					onChange={(event) => setValue(event.target.value)}
 				/>
 			</form>
-			{data && (
-				<section className='response-data'>
-					<WordOrigin word={data.word} origin={data.origin} />
-					<Phonetics data={data.phonetics} />
-					<Meanings meanings={data.meanings} />
-				</section>
+			{hasNewKeyword && (
+				<>
+					<Dictionary keyword={keyword} handleClickedWord={handleClickedWord} />
+					<Images keyword={keyword} />
+				</>
 			)}
 		</div>
 	);

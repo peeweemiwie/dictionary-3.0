@@ -1,8 +1,10 @@
+import './WordOrigin.scss';
+
 const WordOrigin = ({ word, origin }) => {
 	return (
 		<div className='WordOrigin'>
-			<div>{word}</div>
-			<div className='origin'>{origin}</div>
+			<h2 className='h2'>{word}</h2>
+			<p className='origin'>Origin: {origin}</p>
 		</div>
 	);
 };

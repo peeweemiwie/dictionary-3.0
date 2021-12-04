@@ -1,0 +1,13 @@
+@use '../styles/variables' as var;
+.WordOrigin {
+	align-items: flex-start;
+	column-gap: 3rem;
+	display: flex;
+	.h2 {
+		color: var.$white;
+		font-family: var.$monsterrat;
+		font-size: var.$font-size-lg;
+		font-weight: 300;
+		margin: 0;
+	}
+}

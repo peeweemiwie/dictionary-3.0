@@ -1,14 +1,20 @@
-const RelatedWords = ({ type, array }) => {
+import './RelatedWords.scss';
+
+const RelatedWords = ({ type, array, handleClickedWord }) => {
 	return (
 		<div className='RelatedWords'>
-			<h4>{type}</h4>
-			<div className='words'>
+			<h4 className='group-title'>{type}</h4>
+			<ul className='words'>
 				{array.map((word, index) => (
-					<span key={`${word}-${index}`} className='word'>
+					<li
+						key={`${word}-${index}`}
+						className={`word ${type}`}
+						onClick={() => handleClickedWord(word)}
+					>
 						{word}
-					</span>
+					</li>
 				))}
-			</div>
+			</ul>
 		</div>
 	);
 };

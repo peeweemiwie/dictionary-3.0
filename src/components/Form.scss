@@ -1,0 +1,31 @@
+@use '../styles/variables' as var;
+.Form {
+	border-bottom: 1px solid var.$light-gray;
+	display: flex;
+	flex-direction: column;
+	margin: 2rem 0;
+	position: relative;
+	&::before {
+		bottom: 7px;
+		content: 'search';
+		color: var.$light-gray;
+		display: block;
+		font-family: 'Material Icons';
+		font-size: 3rem;
+		left: 0.8rem;
+		position: absolute;
+	}
+	.label {
+		font-size: var.$font-size-reg;
+		margin-left: 4rem;
+	}
+	.input {
+		background-color: transparent;
+		border: 0;
+		color: var.$white;
+		font-family: var.$monsterrat;
+		font-size: var.$font-size-md;
+		font-weight: 300;
+		padding-left: 4rem;
+	}
+}

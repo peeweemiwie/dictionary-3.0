@@ -1,0 +1,38 @@
+@use '../styles/variables' as var;
+
+.RelatedWords {
+	.words {
+		column-gap: 0.3em;
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		row-gap: 0.5em;
+	}
+
+	.word {
+		// border-style: solid;
+		// border-width: 1px;
+		border: 1px solid var.$gray;
+		border-radius: 15px;
+		cursor: pointer;
+		color: var.$primary;
+		font-size: var.$font-size-sm;
+		padding: 2px 13px;
+		transition: background-color 300ms ease-in-out;
+		// &.antonyms {
+		// 	border-color: var.$success;
+		// }
+		// &.synonyms {
+		// 	border-color: var.$primary;
+		// }
+		&:hover {
+			background-color: var.$primary;
+			// &.antonyms {
+			// 	background-color: var.$success;
+			// }
+			// &.synonyms {
+			// 	background-color: var.$primary;
+			// }
+		}
+	}
+}

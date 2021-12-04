@@ -1,0 +1,29 @@
+@use '../styles/variables' as var;
+
+.Phonetics {
+	padding-bottom: 2rem;
+	border-bottom: 1px solid var.$gray;
+	.phonetic {
+		align-items: center;
+		column-gap: 3rem;
+		display: flex;
+		justify-content: flex-end;
+		margin: 0;
+	}
+	.text {
+		font-size: var.$font-size-md;
+		text-align: right;
+		&::before,
+		&::after {
+			font-size: var.$font-size-md;
+		}
+		&::before {
+			content: '[';
+			margin-right: 0.5rem;
+		}
+		&::after {
+			content: ']';
+			margin-left: 0.5rem;
+		}
+	}
+}
