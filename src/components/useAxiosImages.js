@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const useAxiosImages = (keyword) => {
-	// console.log(keyword, ' from useAxiosImages');
 	const pexelApiKey =
 		'563492ad6f91700001000001513e63f102864b409905ee9db0684aae';
 	const apiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=20`;
@@ -18,7 +17,6 @@ const useAxiosImages = (keyword) => {
 				if (response.status !== 200) {
 					throw Error('Could not find from the resource');
 				} else {
-					// console.log('from useAxiosImages: ', response);
 					setData(response);
 					setIsPending(false);
 					setError(null);

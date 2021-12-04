@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const useAxios = (url) => {
-	// console.log(url, ' from useAxios');
-
 	const [data, setData] = useState([]);
 	const [isPending, setIsPending] = useState(true);
 	const [error, setError] = useState(null);
