@@ -3,7 +3,6 @@ import useAxiosImages from './useAxiosImages';
 
 const Images = ({ keyword }) => {
 	const { data, isPending, error } = useAxiosImages(keyword);
-	// console.log(keyword, 'from Images');
 	return (
 		<div className='Images'>
 			{isPending && <p>Images Loading...</p>}

@@ -3,23 +3,11 @@ import './Form.scss';
 
 const Form = ({ defaultValue, onReceivedKeyword }) => {
 	const [value, setValue] = useState(defaultValue);
-	// const [keyword, setKeyword] = useState(defaultValue);
-	// const [hasNewKeyword, setHasNewKeyword] = useState(false);
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		onReceivedKeyword(value);
-		// setKeyword(value);
 	};
-
-	// const handleClickedWord = (word) => {
-	// 	setKeyword(word);
-	// 	setValue(word);
-	// };
-
-	// useEffect(() => {
-	// 	if (keyword) setHasNewKeyword(true);
-	// }, [keyword]);
 
 	return (
 		<form
