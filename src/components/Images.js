@@ -5,6 +5,7 @@ const Images = ({ keyword }) => {
 	const { data, isPending, error } = useAxiosImages(keyword);
 	return (
 		<div className='Images'>
+			<h2 class='section-title'>Images</h2>
 			{isPending && <p>Images Loading...</p>}
 			{error && <p>Sorry... Could not find from the resource</p>}
 			{!isPending && !error && (

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Form from '../src/components/Form';
 import Dictionary from '../src/components/Dictionary';
 import Images from '../src/components/Images';
@@ -13,10 +14,19 @@ const App = () => {
 	return (
 		<div className='App'>
 			<Form defaultValue='general' onReceivedKeyword={onReceivedKeyword} />
-			<nav>navigation goes here</nav>
 			<main className='main'>
-				<Dictionary keyword={keyword} handleClickedWord={onReceivedKeyword} />
-				<Images keyword={keyword} />
+				<Routes>
+					<Route
+						path='/'
+						element={
+							<Dictionary
+								keyword={keyword}
+								handleClickedWord={onReceivedKeyword}
+							/>
+						}
+					/>
+					<Route path='/images' element={<Images keyword={keyword} />} />
+				</Routes>
 			</main>
 		</div>
 	);

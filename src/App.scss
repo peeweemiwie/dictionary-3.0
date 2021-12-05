@@ -10,4 +10,15 @@
 		border: 1px solid pink;
 		margin: 1rem;
 	}
+	.section-title,
+	.group-title {
+		font-weight: 300;
+		margin: 1em 0 0.3em;
+	}
+	.section-title {
+		font-size: var.$font-size-md;
+	}
+	.group-title {
+		font-size: var.$font-size-reg;
+	}
 }

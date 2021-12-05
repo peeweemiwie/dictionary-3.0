@@ -1,18 +1,6 @@
 @use '../styles/variables' as var;
 
 .Dictionary {
-	.section-title,
-	.group-title {
-		font-weight: 300;
-		margin: 1em 0 0.3em;
-	}
-	.section-title {
-		font-size: var.$font-size-md;
-	}
-	.group-title {
-		font-size: var.$font-size-reg;
-	}
-
 	.card {
 		background-color: var.$card-bg;
 		border-radius: var.$md;
