@@ -1,0 +1,18 @@
+@use '../styles/variables' as var;
+
+.Navigation {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	.section-title {
+		text-align: center;
+		.link {
+			border-bottom: 3px solid transparent;
+			color: var.$primary;
+			display: block;
+			text-decoration: none;
+			&.active {
+				border-color: var.$success;
+			}
+		}
+	}
+}

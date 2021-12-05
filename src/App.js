@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Form from '../src/components/Form';
 import Dictionary from '../src/components/Dictionary';
 import Images from '../src/components/Images';
+import Navigation from '../src/components//Navigation';
+import Meanings from '../src/components//Meanings';
 import './App.scss';
 
 const App = () => {
@@ -15,11 +17,13 @@ const App = () => {
 		<div className='App'>
 			<Form defaultValue='general' onReceivedKeyword={onReceivedKeyword} />
 			<main className='main'>
+				<Dictionary keyword={keyword} handleClickedWord={onReceivedKeyword} />
+				<Navigation />
 				<Routes>
 					<Route
 						path='/'
 						element={
-							<Dictionary
+							<Meanings
 								keyword={keyword}
 								handleClickedWord={onReceivedKeyword}
 							/>

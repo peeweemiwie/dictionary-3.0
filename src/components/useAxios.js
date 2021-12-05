@@ -13,7 +13,7 @@ const useAxios = (url) => {
 				if (response.status !== 200) {
 					throw Error('Could not find from the resource');
 				} else {
-					console.log('from useAxios: ', response);
+					// console.log('from useAxios: ', response);
 					setData(response);
 					setIsPending(false);
 					setError(null);

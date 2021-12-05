@@ -1,8 +1,6 @@
 import useAxios from './useAxios';
 import WordOrigin from './WordOrigin';
 import Phonetics from './Phonetics';
-import Meanings from './Meanings';
-import Navigation from './Navigation';
 import './Dictionary.scss';
 
 const Dictionary = ({ keyword, handleClickedWord }) => {
@@ -19,13 +17,13 @@ const Dictionary = ({ keyword, handleClickedWord }) => {
 					<Phonetics data={data.data[0].phonetics} />
 				</div>
 			)}
-			<Navigation />
-			{!isPending && !error && (
+
+			{/* {!isPending && !error && (
 				<Meanings
 					meanings={data.data[0].meanings}
 					handleClickedWord={handleClickedWord}
 				/>
-			)}
+			)} */}
 		</div>
 	);
 };

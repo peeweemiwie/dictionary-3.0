@@ -1,18 +1,4 @@
 @use '../styles/variables' as var;
 
 .Dictionary {
-	.card {
-		background-color: var.$card-bg;
-		border-radius: var.$md;
-		margin-bottom: 3rem;
-		padding: 1.6rem;
-		.card-title {
-			font-size: var.$font-size-reg;
-		}
-		.card-body {
-			border-top: 1px solid var.$gray;
-			font-size: var.$font-size-sm;
-			padding-bottom: 1.8rem;
-		}
-	}
 }

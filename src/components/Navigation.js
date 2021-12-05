@@ -1,13 +1,19 @@
 import { NavLink } from 'react-router-dom';
+import './Navigation.scss';
+
 const Navigation = () => {
 	return (
 		<nav className='Navigation'>
-			<NavLink to='/'>
-				<h2 className='section-title'>Definition</h2>
-			</NavLink>
-			<NavLink to='/images'>
-				<h2 className='section-title'>Images</h2>
-			</NavLink>
+			<h2 className='section-title'>
+				<NavLink to='/' className='link'>
+					Definition
+				</NavLink>
+			</h2>
+			<h2 className='section-title'>
+				<NavLink to='/images' className='link'>
+					Images
+				</NavLink>
+			</h2>
 		</nav>
 	);
 };
