@@ -1,6 +1,6 @@
 import useAxios from './useAxios';
 import Definitions from './Definitions';
-import './Meanings.scss';
+
 const Meanings = ({ keyword, handleClickedWord }) => {
 	const dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
 	const { data, isPending, error } = useAxios(dictionaryApiUrl, keyword);
