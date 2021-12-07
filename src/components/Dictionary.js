@@ -1,7 +1,6 @@
 import useAxios from './useAxios';
 import WordOrigin from './WordOrigin';
 import Phonetics from './Phonetics';
-import './Dictionary.scss';
 
 const Dictionary = ({ keyword }) => {
 	const dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
