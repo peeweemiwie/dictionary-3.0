@@ -10,7 +10,7 @@ const Navigation = ({ keyword }) => {
 				</NavLink>
 			</h2>
 			<h2 className='section-title'>
-				<NavLink to='images/' className='link'>
+				<NavLink to='/images/' className='link'>
 					Images
 				</NavLink>
 			</h2>
