@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import './Navigation.scss';
 
-const Navigation = () => {
+const Navigation = ({ keyword }) => {
 	return (
 		<nav className='Navigation'>
 			<h2 className='section-title'>
@@ -10,7 +10,7 @@ const Navigation = () => {
 				</NavLink>
 			</h2>
 			<h2 className='section-title'>
-				<NavLink to='/images' className='link'>
+				<NavLink to='images/' className='link'>
 					Images
 				</NavLink>
 			</h2>

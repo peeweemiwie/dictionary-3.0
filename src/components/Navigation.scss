@@ -10,8 +10,28 @@
 			color: var.$primary;
 			display: block;
 			text-decoration: none;
-			&.active {
-				border-color: var.$success;
+			position: relative;
+			&::after {
+				background: linear-gradient(
+					to right,
+					var.$primary 15%,
+					var.$success 50%,
+					var.$primary 85%
+				);
+				border-radius: 2px;
+				content: '';
+				height: 4px;
+				width: 0%;
+				bottom: -1rem;
+				left: 50%;
+				position: absolute;
+				display: block;
+				transform: translateX(-50%);
+				transition: width 300ms ease-in-out;
+			}
+			&:hover::after,
+			&.active::after {
+				width: 100%;
 			}
 		}
 	}

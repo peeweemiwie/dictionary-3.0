@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useAxios = (url) => {
+const useAxios = (url, keyword) => {
 	const [data, setData] = useState([]);
 	const [isPending, setIsPending] = useState(true);
 	const [error, setError] = useState(null);
@@ -13,7 +13,6 @@ const useAxios = (url) => {
 				if (response.status !== 200) {
 					throw Error('Could not find from the resource');
 				} else {
-					// console.log('from useAxios: ', response);
 					setData(response);
 					setIsPending(false);
 					setError(null);
@@ -24,7 +23,7 @@ const useAxios = (url) => {
 				setIsPending(false);
 				setData(null);
 			});
-	}, [url]);
+	}, [url, keyword]);
 	return { data, isPending, error };
 };
 

@@ -13,7 +13,6 @@ const useAxiosImages = (keyword) => {
 		axios
 			.get(apiUrl, { headers: authorization })
 			.then((response) => {
-				console.log(response);
 				if (response.status !== 200) {
 					throw Error('Could not find from the resource');
 				} else {

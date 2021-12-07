@@ -3,9 +3,9 @@ import WordOrigin from './WordOrigin';
 import Phonetics from './Phonetics';
 import './Dictionary.scss';
 
-const Dictionary = ({ keyword, handleClickedWord }) => {
+const Dictionary = ({ keyword }) => {
 	const dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-	const { data, isPending, error } = useAxios(dictionaryApiUrl);
+	const { data, isPending, error } = useAxios(dictionaryApiUrl, keyword);
 
 	return (
 		<div className='Dictionary'>
@@ -17,13 +17,6 @@ const Dictionary = ({ keyword, handleClickedWord }) => {
 					<Phonetics data={data.data[0].phonetics} />
 				</div>
 			)}
-
-			{/* {!isPending && !error && (
-				<Meanings
-					meanings={data.data[0].meanings}
-					handleClickedWord={handleClickedWord}
-				/>
-			)} */}
 		</div>
 	);
 };

@@ -1,13 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import './Form.scss';
 
-const Form = ({ defaultValue, onReceivedKeyword }) => {
-	const [value, setValue] = useState(defaultValue);
+const Form = ({ onReceivedKeyword, keyword }) => {
+	const [value, setValue] = useState(keyword);
+	const [searchParams, setSearchParams] = useSearchParams({});
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		onReceivedKeyword(value);
+		let query = value;
+		setSearchParams({ query });
 	};
+	useEffect(() => {
+		setValue(keyword);
+		let query = keyword;
+		setSearchParams({ query });
+		console.log(searchParams);
+	}, [keyword]);
 
 	return (
 		<form

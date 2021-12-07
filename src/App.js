@@ -8,17 +8,17 @@ import Meanings from '../src/components//Meanings';
 import './App.scss';
 
 const App = () => {
-	const [keyword, setKeyword] = useState('general');
+	const [keyword, setKeyword] = useState('cat');
 	const onReceivedKeyword = (word) => {
 		setKeyword(word);
 	};
 
 	return (
 		<div className='App'>
-			<Form defaultValue='general' onReceivedKeyword={onReceivedKeyword} />
+			<Form onReceivedKeyword={onReceivedKeyword} keyword={keyword} />
 			<main className='main'>
-				<Dictionary keyword={keyword} handleClickedWord={onReceivedKeyword} />
-				<Navigation />
+				<Dictionary keyword={keyword} />
+				<Navigation keyword={keyword} />
 				<Routes>
 					<Route
 						path='/'
@@ -29,7 +29,7 @@ const App = () => {
 							/>
 						}
 					/>
-					<Route path='/images' element={<Images keyword={keyword} />} />
+					<Route path='images/' element={<Images keyword={keyword} />} />
 				</Routes>
 			</main>
 		</div>
