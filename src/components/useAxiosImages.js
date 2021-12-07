@@ -26,6 +26,7 @@ const useAxiosImages = (keyword) => {
 				setIsPending(false);
 				setData(null);
 			});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [keyword]);
 	return { data, isPending, error };
 };

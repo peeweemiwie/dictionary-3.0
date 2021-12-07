@@ -17,6 +17,7 @@ const Form = ({ onReceivedKeyword, keyword }) => {
 		let query = keyword;
 		setSearchParams({ query });
 		console.log(searchParams);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [keyword]);
 
 	return (
