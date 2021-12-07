@@ -13,7 +13,6 @@ const useAxiosImages = (keyword) => {
 		axios
 			.get(apiUrl, { headers: authorization })
 			.then((response) => {
-				console.log(response);
 				if (response.status !== 200) {
 					throw Error('Could not find from the resource');
 				} else {
@@ -27,6 +26,7 @@ const useAxiosImages = (keyword) => {
 				setIsPending(false);
 				setData(null);
 			});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [keyword]);
 	return { data, isPending, error };
 };

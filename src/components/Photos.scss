@@ -1,11 +1,9 @@
 @use '../styles/variables' as var;
 
 .Photos {
-	.response-data {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-	}
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
 
 	.figure {
 		cursor: pointer;

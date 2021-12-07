@@ -7,8 +7,11 @@ const Images = ({ keyword }) => {
 		<div className='Images'>
 			{isPending && <p>Images Loading...</p>}
 			{error && <p>Sorry... Could not find from the resource</p>}
-			{!isPending && !error && (
+			{!isPending && !error && data.data.photos.length >= 1 && (
 				<Photos photos={data.data.photos} keyword={keyword} />
+			)}
+			{!isPending && !error && data.data.photos.length === 0 && (
+				<p>Sorry... Could not find from the resource</p>
 			)}
 		</div>
 	);

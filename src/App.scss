@@ -6,8 +6,29 @@
 	margin: 0 auto;
 	max-width: 80rem;
 	padding: 2rem;
-	.test-border {
-		border: 1px solid pink;
-		margin: 1rem;
+	.card {
+		background-color: var.$card-bg;
+		border-radius: var.$md;
+		margin-bottom: 3rem;
+		padding: 1.6rem;
+		.card-title {
+			font-size: var.$font-size-reg;
+		}
+		.card-body {
+			border-top: 1px solid var.$gray;
+			font-size: var.$font-size-sm;
+			padding-bottom: 1.8rem;
+		}
+	}
+	.section-title,
+	.group-title {
+		font-weight: 300;
+		margin: 1em 0 0.3em;
+	}
+	.section-title {
+		font-size: var.$font-size-md;
+	}
+	.group-title {
+		font-size: var.$font-size-reg;
 	}
 }
