@@ -1,17 +1,27 @@
 @use '../styles/variables' as var;
+@use '../styles/breakpoints' as bp;
 
 .Phonetics {
 	padding-bottom: 2rem;
 	.phonetic {
-		align-items: center;
-		column-gap: 3rem;
 		display: flex;
-		justify-content: flex-end;
+		flex-direction: column;
 		margin: 0;
+		row-gap: 2rem;
+		@include bp.respond-above(sm) {
+			align-items: center;
+			column-gap: 3rem;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			margin: 0;
+		}
 	}
 	.text {
 		font-size: var.$font-size-md;
-		text-align: right;
+		@include bp.respond-above(sm) {
+			text-align: right;
+		}
 		&::before,
 		&::after {
 			font-size: var.$font-size-md;
