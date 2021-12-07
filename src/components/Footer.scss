@@ -1,0 +1,8 @@
+@use '../styles/variables' as var;
+
+.Footer {
+	text-align: center;
+	.link {
+		color: var.$primary;
+	}
+}
