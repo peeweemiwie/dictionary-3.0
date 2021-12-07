@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Form from '../src/components/Form';
 import Dictionary from '../src/components/Dictionary';
 import Images from '../src/components/Images';
-import Navigation from '../src/components//Navigation';
-import Meanings from '../src/components//Meanings';
+import Navigation from '../src/components/Navigation';
+import Meanings from '../src/components/Meanings';
 import './App.scss';
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
 							/>
 						}
 					/>
-					<Route path='images/' element={<Images keyword={keyword} />} />
+					<Route path='/images' element={<Images keyword={keyword} />} />
 				</Routes>
 			</main>
 		</div>

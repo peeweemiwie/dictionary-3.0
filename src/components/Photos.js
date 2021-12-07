@@ -1,17 +1,47 @@
+import { useState } from 'react';
+import Figure from './Figure';
+import Modal from './Modal';
 import './Photos.scss';
 
 const Photos = ({ photos, keyword }) => {
+	const [modal, setModal] = useState(false);
+	const [newImage, setNewImage] = useState(null);
+	const handleClick = (event) => {
+		setNewImage({
+			src: event.target.getAttribute('data-alt-size'),
+			photographer: event.target.getAttribute('data-photographer'),
+			webLink: event.target.getAttribute('data-web-link'),
+		});
+		setModal(true);
+	};
+	const closeModal = () => {
+		setNewImage(null);
+		setModal(false);
+	};
 	return (
 		<div className='Photos'>
 			{photos.map((photo, index) => (
-				<figure key={`photo-${index}`} className='figure'>
-					<img
+				<span key={photo.id}>
+					<Figure
 						src={photo.src.small}
-						alt={`${keyword} by ${photo.photographer}`}
+						keyword={keyword}
+						photographer={photo.photographer}
+						altSize={photo.src.large}
+						webLink={photo.photographer_url}
+						func={handleClick}
 					/>
-					<figcaption className='figcaption'>{`${keyword} by ${photo.photographer}`}</figcaption>
-				</figure>
+				</span>
 			))}
+			{modal && newImage && (
+				<Modal
+					src={newImage.src}
+					keyword={keyword}
+					photographer={newImage.photographer}
+					webLink={newImage.webLink}
+					id={newImage.id}
+					closeModal={closeModal}
+				/>
+			)}
 		</div>
 	);
 };

@@ -1,0 +1,38 @@
+@use '../styles/variables' as var;
+@use '../styles/base' as b;
+
+.Modal {
+	align-items: center;
+	background-color: rgba(var.$dark, 0.8);
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 2;
+	.btn-close {
+		color: var.$light-gray;
+		cursor: pointer;
+		font-family: 'Material Icons';
+		font-size: 5rem;
+		position: absolute;
+		right: 2rem;
+		top: 2rem;
+		z-index: 10;
+	}
+	.Figure {
+		background-color: var.$white;
+		padding: 2rem;
+		.figcaption {
+			color: var.$text;
+			display: block;
+			padding: 1rem;
+			text-align: center;
+			.link {
+				color: var.$primary;
+			}
+		}
+	}
+}
