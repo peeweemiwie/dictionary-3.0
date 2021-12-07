@@ -5,7 +5,9 @@ import Dictionary from '../src/components/Dictionary';
 import Images from '../src/components/Images';
 import Navigation from '../src/components/Navigation';
 import Meanings from '../src/components/Meanings';
+
 import './App.scss';
+import Footer from './components/Footer';
 
 const App = () => {
 	const [keyword, setKeyword] = useState('cat');
@@ -32,6 +34,7 @@ const App = () => {
 					<Route path='/images' element={<Images keyword={keyword} />} />
 				</Routes>
 			</main>
+			<Footer />
 		</div>
 	);
 };

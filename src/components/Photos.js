@@ -13,10 +13,12 @@ const Photos = ({ photos, keyword }) => {
 			webLink: event.target.getAttribute('data-web-link'),
 		});
 		setModal(true);
+		document.body.style.overflow = 'hidden';
 	};
 	const closeModal = () => {
 		setNewImage(null);
 		setModal(false);
+		document.body.style.overflow = 'unset';
 	};
 	return (
 		<div className='Photos'>
